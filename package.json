@@ -2,9 +2,9 @@
   "name": "@funkster/core",
   "version": "1.0.0",
   "description": "Funkster is a compositional server library. This package contains the core types and combinators.",
-  "homepage": "https://github.com/Bomret/funkster-core",
+  "homepage": "https://github.com/funkster-js/core",
   "license": "Unlicense",
-  "bugs": "https://github.com/Bomret/funkster-core/issues",
+  "bugs": "https://github.com/funkster-js/core/issues",
   "author": "Stefan Reichel <dev@bomret.com> (http://bomret.com)",
   "keywords": [
     "server",
@@ -52,14 +52,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bomret/funkster-core.git"
+    "url": "https://github.com/funkster-js/core.git"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "publishConfig": {
-    "tag": "next"
   }
 }
