@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@funkster/core.svg)](https://www.npmjs.com/package/@funkster/core)
 [![npm](https://img.shields.io/npm/dt/@funkster/core.svg)](https://www.npmjs.com/package/@funkster/core)
+[![license](https://img.shields.io/badge/license-Unlicense-brightgreen.svg)](http://unlicense.org/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/funkster-js/core.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/funkster-js/core.svg)](https://travis-ci.org/Bomret/funkster-core)
 
