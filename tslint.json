@@ -1,0 +1,41 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "arrow-parens": false,
+    "space-before-function-paren": [true, "always"],
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "curly": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+    "indent": [
+      true,
+      "spaces"
+    ]
+  },
+  "jsRules": {
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ]
+  }
+}

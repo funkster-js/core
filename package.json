@@ -1,0 +1,65 @@
+{
+  "name": "@funkster/core",
+  "version": "1.0.0",
+  "description": "Funkster is a compositional server library. This package contains the core types and combinators.",
+  "homepage": "https://github.com/Bomret/funkster-core",
+  "license": "Unlicense",
+  "bugs": "https://github.com/Bomret/funkster-core/issues",
+  "author": "Stefan Reichel <dev@bomret.com> (http://bomret.com)",
+  "keywords": [
+    "server",
+    "compose",
+    "composition",
+    "functional",
+    "funkster"
+  ],
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "precommit": "npm run test",
+    "prepush": "npm run test",
+    "test": "gulp test",
+    "release": "gulp package && npm publish dist/publish.tar.gz",
+    "semantic-release": "semantic-release pre && npm run release && semantic-release post"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mocha": "^2.2.38",
+    "@types/node": "^7.0.3",
+    "@types/sinon": "^1.16.35",
+    "cz-conventional-changelog": "^2.0.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-help": "^1.6.0",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^4.0.0",
+    "gulp-tar-path": "^1.0.1",
+    "gulp-tslint": "^7.0.1",
+    "gulp-typescript": "^3.1.4",
+    "husky": "^0.13.1",
+    "merge2": "^1.0.3",
+    "mocha": "^3.2.0",
+    "semantic-release": "^6.3.2",
+    "sinon": "^2.0.0",
+    "standard": "^9.0.0",
+    "ts-node": "^3.0.0",
+    "tslint": "~4.5.1",
+    "typescript": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bomret/funkster-core.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "tag": "next"
+  }
+}
