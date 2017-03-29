@@ -1,6 +1,6 @@
 {
   "name": "@funkster/core",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Funkster is a compositional server library. This package contains the core types and combinators.",
   "homepage": "https://github.com/Bomret/funkster-core",
   "license": "Unlicense",
