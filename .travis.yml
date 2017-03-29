@@ -1,13 +1,15 @@
 language: node_js
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - node_modules
 notifications:
   email: false
 node_js:
-  - '4.2.0'
   - 'node'
+  - '4.2.0'
 before_script:
   - npm prune
-script: npm run test
 after_success:
   - npm run semantic-release
 branches:
