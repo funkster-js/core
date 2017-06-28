@@ -7,15 +7,27 @@
       true,
       "never"
     ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
     "quotemark": [
       true,
-      "single"
+      "avoid-escape"
     ],
     "curly": false,
     "interface-name": [
       true,
       "never-prefix"
     ],
+    "max-classes-per-file": [
+      true,
+      10
+    ],
+    "object-literal-sort-keys": false,
     "trailing-comma": [
       true,
       {
