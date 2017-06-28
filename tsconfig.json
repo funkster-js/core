@@ -11,6 +11,7 @@
     "strictNullChecks": true,
     "lib": [
       "es2015.promise",
+      "es2015.collection",
       "es5"
     ]
   },
