@@ -1,12 +1,8 @@
 export type Option<T> = T | null
+export type Transform<In, Out> = (source: In) => Promise<Option<Out>>
+export type Pipe<Context> = Transform<Context, Context>
 
-export interface Transform<In, Out> {
-  (source: In): Promise<Option<Out>>
-}
-
-export interface Pipe<Context> extends Transform<Context, Context> { }
-
-export const unapplicable = Promise.resolve<any>(null)
+export const unapplicable = Promise.resolve(null)
 
 export function never<Context> (ctx?: Context) {
   return unapplicable
