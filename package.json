@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/mocha": "^2.2.38",
     "@types/node": "^8.0.6",
-    "@types/sinon": "^2.1.0",
+    "@types/sinon": "^4.0.0",
     "cz-conventional-changelog": "^2.0.0",
     "del": "^2.2.1",
     "gulp": "^3.9.0",
