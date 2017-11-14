@@ -1,8 +1,8 @@
-export type Option<T> = T | null
+export type Option<T> = T | void
 export type Transform<In, Out> = (source: In) => Promise<Option<Out>>
 export type Pipe<Context> = Transform<Context, Context>
 
-export const unapplicable = Promise.resolve(null)
+export const unapplicable = Promise.resolve()
 
 export function never<Context> (ctx?: Context) {
   return unapplicable
@@ -12,9 +12,7 @@ export function always<Context> (ctx: Context) {
   return Promise.resolve(ctx)
 }
 
-export async function bind<Context> (
-  r: Promise<Option<Context>>,
-  f: Pipe<Context>) {
+export async function bind<Context> (r: Promise<Option<Context>>, f: Pipe<Context>) {
   try {
     const res = await r
     if (!res) return unapplicable
@@ -25,18 +23,14 @@ export async function bind<Context> (
   }
 }
 
-export async function map<Context> (
-  r: Promise<Option<Context>>,
-  f: (ctx: Context) => Option<Context>) {
+export async function map<Context> (r: Promise<Option<Context>>, f: (ctx: Context) => Option<Context>) {
   return bind(r, (ctx: Context) => {
     const res = f(ctx)
     return Promise.resolve(res)
   })
 }
 
-export function compose<Context> (
-  first: Pipe<Context>,
-  second: Pipe<Context>): Pipe<Context> {
+export function compose<Context> (first: Pipe<Context>, second: Pipe<Context>): Pipe<Context> {
   return (ctx: Context) => bind(first(ctx), second)
 }
 
@@ -46,8 +40,6 @@ async function chooseFrom<Context> (a: Context, parts: Array<Pipe<Context>>) {
 
     if (res) return res
   }
-
-  return null
 }
 
 export function choose<Context> (parts: Array<Pipe<Context>>): Pipe<Context> {
