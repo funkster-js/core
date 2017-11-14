@@ -6,17 +6,10 @@
   "license": "Unlicense",
   "bugs": "https://github.com/funkster-js/core/issues",
   "author": "Stefan Reichel <dev@bomret.com> (http://bomret.com)",
-  "keywords": [
-    "server",
-    "compose",
-    "composition",
-    "functional",
-    "funkster"
-  ],
+  "keywords": [ "server", "compose", "composition", "functional", "funkster" ],
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "precommit": "npm run test",
     "prepush": "npm run test",
     "test": "gulp test",
     "release": "gulp package && npm publish dist/publish.tar.gz",
