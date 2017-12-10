@@ -38,7 +38,7 @@
     "should-sinon": "0.0.6",
     "sinon": "^2.4.1",
     "standard": "^9.0.0",
-    "ts-node": "^3.3.0",
+    "ts-node": "^4.0.0",
     "tslint": "~5.5.0",
     "typescript": "^2.6.1"
   },
