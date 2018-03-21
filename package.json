@@ -13,7 +13,7 @@
     "prepush": "npm run test",
     "test": "gulp test",
     "release": "gulp package && npm publish dist/publish.tar.gz",
-    "semantic-release": "semantic-release pre && npm run release && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
