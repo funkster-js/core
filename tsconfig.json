@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es3",
+    "target": "es2015",
     "declaration": true,
     "module": "commonjs",
     "moduleResolution": "node",
@@ -8,15 +8,14 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "strictNullChecks": true,
+    "strictFunctionTypes": true,
     "sourceMap": true,
     "allowJs": false,
     "alwaysStrict": true,
     "newLine": "LF",
     "strict": true,
-    "strictFunctionTypes": true,
     "rootDir": "./src",
-    "outDir": "./lib",
-    "lib": [ "es5", "es2015.promise" ]
+    "outDir": "./lib"
   },
   "include": [ "./src/**/*.ts" ],
   "exclude": [ "node_modules" ]

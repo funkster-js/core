@@ -12,7 +12,10 @@ export function always<Context> (ctx: Context) {
   return Promise.resolve(ctx)
 }
 
-export async function bind<Context> (r: Promise<Option<Context>>, f: Pipe<Context>) {
+export async function bind<Context> (
+  r: Promise<Option<Context>>,
+  f: Pipe<Context>
+) {
   try {
     const res = await r
     if (!res) return unapplicable
@@ -23,14 +26,20 @@ export async function bind<Context> (r: Promise<Option<Context>>, f: Pipe<Contex
   }
 }
 
-export async function map<Context> (r: Promise<Option<Context>>, f: (ctx: Context) => Option<Context>) {
+export async function map<Context> (
+  r: Promise<Option<Context>>,
+  f: (ctx: Context) => Option<Context>
+) {
   return bind(r, (ctx: Context) => {
     const res = f(ctx)
     return Promise.resolve(res)
   })
 }
 
-export function compose<Context> (first: Pipe<Context>, second: Pipe<Context>): Pipe<Context> {
+export function compose<Context> (
+  first: Pipe<Context>,
+  second: Pipe<Context>
+): Pipe<Context> {
   return (ctx: Context) => bind(first(ctx), second)
 }
 
