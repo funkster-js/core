@@ -6,13 +6,7 @@
   "license": "Unlicense",
   "bugs": "https://github.com/funkster-js/core/issues",
   "author": "Stefan Reichel <dev@bomret.com> (http://bomret.com)",
-  "keywords": [
-    "server",
-    "compose",
-    "composition",
-    "functional",
-    "funkster"
-  ],
+  "keywords": [ "server", "compose", "composition", "functional", "funkster" ],
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
@@ -49,7 +43,7 @@
     "typescript": "^2.7.2"
   },
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.5.0"
   },
   "repository": {
     "type": "git",
