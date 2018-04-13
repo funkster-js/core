@@ -1,4 +1,14 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib/",
-    "vsicons.presets.angular": false
+  "typescript.tsdk": "node_modules/typescript/lib/",
+
+  "prettier.arrowParens": false,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.spaceBeforeFunctionParen": true,
+  "prettier.singleQuote": true,
+
+  "javascript.format.enable": false,
+  "typescript.format.enable": false
 }

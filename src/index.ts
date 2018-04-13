@@ -1,6 +1,4 @@
-export type Option<T> = T | void
-export type Transform<In, Out> = (source: In) => Promise<Option<Out>>
-export type Pipe<Context> = Transform<Context, Context>
+import { Option, Pipe } from './types'
 
 export const unapplicable = Promise.resolve()
 

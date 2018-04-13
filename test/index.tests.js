@@ -1,4 +1,5 @@
 const assert = require('assert')
+const { describe, it } = require('mocha')
 const should = require('should')
 const sinon = require('sinon')
 
@@ -16,7 +17,8 @@ describe('When choosing from two pipes', () => {
     const pipe = choose([ first, second ])
     const res = pipe(_ctx)
 
-    it('should process both pipes and return undefined', () => should(res).be.fulfilledWith(undefined))
+    it('should process both pipes and return undefined', () =>
+      should(res).be.fulfilledWith(undefined))
 
     it('should call the first function once with the context', () =>
       should(first).be.calledOnce().and.be.calledWithExactly(_ctx))
