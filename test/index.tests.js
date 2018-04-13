@@ -1,4 +1,3 @@
-const assert = require('assert')
 const { describe, it } = require('mocha')
 const should = require('should')
 const sinon = require('sinon')
@@ -10,7 +9,7 @@ const { chain, choose } = require('../lib/index')
 const _ctx = { id: 1 }
 
 describe('When choosing from two pipes', () => {
-  describe('and none results in success.', async () => {
+  describe('and none results in success.', () => {
     const first = sinon.stub().resolves(null)
     const second = sinon.stub().resolves(null)
 
@@ -32,11 +31,11 @@ describe('When choosing from two pipes', () => {
     const second = sinon.stub().resolves(null)
 
     const pipe = choose([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should only process the first pipe and return the context.', async () => {
-      const res = await pipe(_ctx)
+    it('should only process the first pipe and return the context.', () => {
+      should(res).be.fulfilledWith(_ctx)
 
-      assert.deepEqual(res, _ctx)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.notCalled(second)
@@ -48,11 +47,11 @@ describe('When choosing from two pipes', () => {
     const second = sinon.stub().resolves(_ctx)
 
     const pipe = choose([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should process both pipes and return the context.', async () => {
-      const res = await pipe(_ctx)
+    it('should process both pipes and return the context.', () => {
+      should(res).be.fulfilledWith(_ctx)
 
-      assert.deepEqual(res, _ctx)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.calledOnce(second)
@@ -62,16 +61,16 @@ describe('When choosing from two pipes', () => {
 })
 
 describe('When chaining two pipes', () => {
-  describe('and none results in success.', async () => {
+  describe('and none results in success.', () => {
     const first = sinon.stub().resolves()
     const second = sinon.stub().resolves()
 
     const pipe = chain([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should process only the first pipe and return null.', async () => {
-      const res = await pipe(_ctx)
+    it('should process only the first pipe and return null.', () => {
+      should(res).be.fulfilledWith(undefined)
 
-      assert.equal(res, undefined)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.notCalled(second)
@@ -83,11 +82,11 @@ describe('When chaining two pipes', () => {
     const second = sinon.stub().resolves()
 
     const pipe = chain([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should process both pipes and return null.', async () => {
-      const res = await pipe(_ctx)
+    it('should process both pipes and return null.', () => {
+      should(res).be.fulfilledWith(undefined)
 
-      assert.deepEqual(res, null)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.calledOnce(second)
@@ -100,11 +99,11 @@ describe('When chaining two pipes', () => {
     const second = sinon.stub().resolves(_ctx)
 
     const pipe = chain([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should process only the first pipe and return null.', async () => {
-      const res = await pipe(_ctx)
+    it('should process only the first pipe and return nothing.', () => {
+      should(res).be.fulfilledWith(undefined)
 
-      assert.deepEqual(res, undefined)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.notCalled(second)
@@ -116,11 +115,11 @@ describe('When chaining two pipes', () => {
     const second = sinon.stub().resolves(_ctx)
 
     const pipe = chain([ first, second ])
+    const res = pipe(_ctx)
 
-    it('should process both pipes and return the context.', async () => {
-      const res = await pipe(_ctx)
+    it('should process both pipes and return the context.', () => {
+      should(res).be.fulfilledWith(_ctx)
 
-      assert.deepEqual(res, _ctx)
       sinon.assert.calledOnce(first)
       sinon.assert.calledWithExactly(first, _ctx)
       sinon.assert.calledOnce(second)
