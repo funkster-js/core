@@ -29,7 +29,7 @@
     "gulp-spawn-mocha": "^5.0.1",
     "gulp-tar-path": "^1.0.2",
     "gulp-tslint": "^8.1.3",
-    "gulp-typescript": "^4.0.2",
+    "gulp-typescript": "^5.0.0",
     "husky": "^0.14.3",
     "merge2": "^1.2.1",
     "mocha": "^5.1.0",
