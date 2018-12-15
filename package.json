@@ -33,7 +33,7 @@
     "husky": "^0.14.3",
     "merge2": "^1.2.1",
     "mocha": "^5.1.0",
-    "semantic-release": "^15.1.7",
+    "semantic-release": "^15.13.0",
     "should": "^13.2.1",
     "should-sinon": "0.0.6",
     "sinon": "^4.5.0",
