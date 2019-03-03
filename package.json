@@ -21,7 +21,7 @@
     "@types/node": "^9.6.5",
     "@types/sinon": "^4.3.1",
     "cz-conventional-changelog": "^2.1.0",
-    "del": "^3.0.0",
+    "del": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-gzip": "^1.4.2",
     "gulp-help": "^1.6.1",
